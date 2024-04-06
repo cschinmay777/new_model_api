@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 from tensorflow.keras.models import load_model
+from flask_cors import CORS
 
 features=[
     "Are you interested in learning how machines work and how to design them?",
@@ -151,7 +152,7 @@ def prediction(inp_lst):
 
 
 app = Flask(__name__)
-
+CORS(app)
 @app.route('/predict_career', methods=['POST'])
 def predict():
     data = request.json  # Get JSON data from the POST request

@@ -165,13 +165,19 @@ def predict():
     max_index = max(range(len(arr[0])), key=arr[0].__getitem__)
     print(arr[0])
     print(max_index)
+    arr[0][max_index]=-1
+    max_index2 = max(range(len(arr[0])), key=arr[0].__getitem__)
+    arr[0][max_index2]=-1
+    max_index3 = max(range(len(arr[0])), key=arr[0].__getitem__)
+    arr[0][max_index3]=-1
+
     Categories= ['Arts & Humanities', 'Business& Enterpreneurship', 'Commerce & CA', 'Education & Teaching', 'Engineering', 'Hospitality', 'Law and Legal Studies' , 'Medical & Heathcare','Psychology and Counseling', 'Sports & Athletics']
     print(Categories[max_index])
     # Process the list of strings (In this example, just concatenating them)
     result = ' '.join(data)
     
     # Return the result in JSON format
-    ans=Categories[max_index]
+    ans=Categories[max_index]+" "+Categories[max_index2]+" "+Categories[max_index3]
     return jsonify({'result': ans})
 
 if __name__ == '__main__':

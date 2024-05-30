@@ -177,7 +177,7 @@ def predict():
     result = ' '.join(data)
     
     # Return the result in JSON format
-    ans=Categories[max_index]+" "+Categories[max_index2]+" "+Categories[max_index3]
+    ans=Categories[max_index]+" , "+Categories[max_index2]+" , "+Categories[max_index3]
     return jsonify({'result': ans})
 
 if __name__ == '__main__':

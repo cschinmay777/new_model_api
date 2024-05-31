@@ -156,6 +156,7 @@ CORS(app)
 @app.route('/predict_career', methods=['POST'])
 def predict():
     data = request.json  # Get JSON data from the POST request
+    print(data)
     if not data or not isinstance(data, list):
         return jsonify({'error': 'Invalid input. Expected a JSON list of strings.'}), 400
     
